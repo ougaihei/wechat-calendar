@@ -1,0 +1,14 @@
+<template name="calendar">
+  <view class="calendar" bindtap="dateHandler">
+    <view data-value="<<">《</view>
+    <view class="date_title">{{currentYear}}年{{currentMonth}}月</view>
+    <view data-value=">>">》</view>
+    <view wx:for="{{week_CH}}" wx:key="{{index}}" class="week">{{item}}</view>
+    <view wx:if="{{hasBlank}}" class="blanks_container">
+      <view wx:for="{{blanks}}" wx:key="{{index}}" class="blanks"></view>
+    </view>
+    <view wx:for="{{days}}" wx:key="{{index}}" class="days" data-item="{{item}}" bindtap="getDay">
+      {{item}}
+    </view>
+  </view>
+</template>
